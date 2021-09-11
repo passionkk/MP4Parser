@@ -2,6 +2,8 @@ cmake_minimum_required (VERSION 3.8)
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 project(mp4Parser)
 
+file(GLOB srcs *.cpp *.hpp *.h)
+
 if(APPLE)
   if(IOS)
     set(PLATFORM_SUB_DIR ios)
@@ -21,5 +23,5 @@ endif()
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/cmake/)
 
 if (WIN32 OR APPLE)
-    add_executable(mp4Parser main.cpp)
+    add_executable(mp4Parser main.cpp FileReader.cpp)
 endif()
