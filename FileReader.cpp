@@ -57,11 +57,10 @@ uint64_t FileReader::GetCurPos() {
   return ret;
 }
 
-int FileReader::SetCurPos(uint64_t pos) {
+int FileReader::SetCurPos(int pos) {
   int ret = -1;
   if(m_fp) {
-    fseek(m_fp, 0, pos);
-    ret = 0;
+    ret = fseek(m_fp, pos, SEEK_SET);
   }
   return ret;
 }

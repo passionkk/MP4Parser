@@ -21,7 +21,7 @@ public:
   
   uint64_t GetFileSize();
   uint64_t GetCurPos();
-  int SetCurPos(uint64_t pos);
+  int SetCurPos(int pos);
   
   uint8_t  Read8();
   uint16_t Read16();
